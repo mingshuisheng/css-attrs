@@ -1,0 +1,1 @@
+export const isVarKey = (key: string) => key.startsWith("var:")
