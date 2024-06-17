@@ -15,7 +15,7 @@ const processStyleSelectors = flow<[string, string]>(
 const insertedStyle = new Set<string>();
 export function createCss(key: string, realValue: string) {
 
-  const selector: string = !realValue ? `[${key}]` : `[${key}="${realValue}"]`;
+  const selector: string = `[${key}="${realValue}"]`;
   const [_, realSelector] = processStyleSelectors([key, selector]);
   if (insertedStyle.has(realSelector)) {
     return;
