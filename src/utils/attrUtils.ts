@@ -9,6 +9,8 @@ export function mutationRecordToAttrs(mutations: MutationRecord[], keyFilter: (k
     .filter((m) => m.addedNodes.length) //过滤出添加Node的mutations
     .map((m) => [...m.addedNodes]) // 获取所有添加被添加的Nodes
     .flat()
+    //排除非标签节点，比如#text
+    .filter(node => node.nodeType === Node.ELEMENT_NODE)
     .map(node => { //因为添加节点有可能仅包含子孙节点，所以这里要把所有子节点都铺平
       const el = node as HTMLElement;
       return [el, ...el.getElementsByTagName("*")]
