@@ -35,6 +35,7 @@ function App() {
       bg="green"
       dark-hover:bg="blue"
       box-sizing="content-box"
+      min-h="500px"
     >
       <button
         cursor="pointer"

@@ -1,11 +1,14 @@
 import type { Properties } from "csstype";
 
-
 export interface BaseProps {
   // export interface BaseProps {
-  d: Properties["display"];
+  display: Properties["display"];
   h: Properties["height"];
+  "min-h": Properties["minHeight"];
+  "max-h": Properties["maxHeight"];
   w: Properties["width"];
+  "min-w": Properties["minWidth"];
+  "max-w": Properties["maxWidth"];
   c: Properties["color"];
   bg: Properties["backgroundColor"];
   z: Properties["zIndex"];

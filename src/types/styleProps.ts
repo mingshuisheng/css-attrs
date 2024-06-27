@@ -11,7 +11,7 @@ type AllCombs<T extends string[]> = T extends [
   ? F | `${F}-${AllCombs<R>}` | AllCombs<R>
   : "";
 
-type PseudoPrefix = Combination<["dark", "hover", "focus", "active", "before" | "after"]>;
+type PseudoPrefix = Combination<["dark", "hover", "focus", "active", "before" | "after", "checked"]>;
 
 type AttributingNames<K extends string> = K | `${PseudoPrefix}:${K}`;
 
